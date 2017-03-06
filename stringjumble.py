@@ -1,7 +1,7 @@
 """
 stringjumble.py
-Author: <your name>
-Credit: <sources>
+Author: Sam
+Credit: Earl
 
 Assignment:
 
@@ -25,3 +25,23 @@ ydnah dnif yam uoy taht skcirt ro seuqinhcet wef a era erehT
 handy find may you that tricks or techniques few a are There
 erehT era a wef seuqinhcet ro skcirt taht uoy yam dnif ydnah
 """
+mix=str(input("Please enter a string of text (the bigger the better): "))
+print("You entered"+mix+". Now jumble it:")
+
+print((mix)[len(mix)::-1])
+lastspace=len(mix)
+for x in range(lastspace-1,-2,-1):
+    if mix[x]==" " or x==-1:
+        print(mix[x+1:lastspace],end=" ")
+        lastspace=x
+print("")
+lastspace=0
+for x in range(0,len(mix)): 
+    if mix[x]==" ":
+        if lastspace==0:
+            print(mix[x-1::-1],end=" ")
+        else:
+            print(mix[x-1:lastspace:-1],end= " ")
+        lastspace=x
+    if x>=len(mix)-1:
+        print(mix[x:lastspace:-1],end= " ")
